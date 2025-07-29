@@ -1,3 +1,3 @@
 Desenvolvido por :
-Lucas maximo
+Lucas maximo e
 Ivan Epprecht
