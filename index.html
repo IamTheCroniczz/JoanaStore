@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Loja da Joana</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet" />
+  <link href="style.css" rel="stylesheet" />
+  <style>
+    :root {
+      --primary: rgb(255, 202, 123);
+      --dark-bg: #111;
+      --light-text: #f1f1f1;
+      --glass: rgba(255, 255, 255, 0.1);
+    }
+
+    body {
+      background-color: var(--dark-bg);
+      color: var(--light-text);
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    .navbar {
+      background-color: var(--glass) !important;
+      backdrop-filter: blur(10px);
+    }
+
+    .navbar-brand,
+    .nav-link {
+      color: var(--light-text) !important;
+    }
+
+    header {
+      background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.0)),
+        url('/img/logo.png') center/cover no-repeat;
+      min-height: 60vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      text-align: center;
+      text-shadow: 1px 1px 6px #000;
+    }
+
+    h1,
+    h2 {
+      color: var(--primary);
+    }
+
+    .card {
+      background-color: #1a1a1a;
+      border: none;
+      color: var(--light-text);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 0 20px var(--primary);
+    }
+
+    .btn-primary {
+      background-color: var(--primary);
+      border: none;
+    }
+
+    .btn-primary:hover {
+      background-color: #0cc;
+    }
+
+    footer {
+      background-color: #000;
+      border-top: 1px solid var(--primary);
+    }
+
+    .sobre-img {
+      max-width: 100%;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(0, 255, 255, 0.2);
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg fixed-top">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Joana Store</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#sobre">Sobre</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contato">Contato</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Header -->
+  <header>
+    <h1 class="display-4 fw-bold"></h1>
+  </header>
+
+  <!-- Sobre mim -->
+  <section id="sobre" class="container py-5">
+    <div class="row align-items-center flex-column flex-md-row">
+      <div class="col-md-6 order-2 order-md-1">
+        <h2>Sobre mim</h2>
+        <p>Oi! Eu sou a Joana, comerciante apaixonada por moda. Trabalho com roupas e acessórios escolhidos com carinho pra você se sentir ainda mais estilosa e confiante!</p>
+      </div>
+      <div class="col-md-6 order-1 order-md-2">
+        <img src="/img/joana.png" alt="Joana" class="sobre-img" />
+      </div>
+    </div>
+  </section>
+
+  <!-- Produtos -->
+  <section class="container py-5">
+    <h2 class="text-center mb-4">Produtos</h2>
+    <div id="produtos" class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-4">
+      <!-- Os cards serão inseridos aqui pela API -->
+    </div>
+  </section>
+
+  <!-- Contato -->
+  <section id="contato" class="container py-5">
+    <h2 class="text-center mb-4">Fale com a gente</h2>
+    <form class="needs-validation" novalidate>
+      <div class="mb-3">
+        <label for="nome" class="form-label">Nome</label>
+        <input type="text" class="form-control" id="nome" required />
+        <div class="invalid-feedback">Digite seu nome.</div>
+      </div>
+      <div class="mb-3">
+        <label for="email" class="form-label">E-mail</label>
+        <input type="email" class="form-control" id="email" required />
+        <div class="invalid-feedback">Digite um e-mail válido.</div>
+      </div>
+      <div class="mb-3">
+        <label for="mensagem" class="form-label">Mensagem</label>
+        <textarea class="form-control" id="mensagem" rows="5" required></textarea>
+        <div class="invalid-feedback">Escreva uma mensagem.</div>
+      </div>
+      <button class="btn btn-primary" type="submit">Enviar</button>
+    </form>
+  </section>
+
+  <!-- Rodapé -->
+  <footer class="text-white text-center py-4">
+    <p>Joana Store &copy; 2025</p>
+    <a href="#" class="text-white me-3"><i class="bi bi-instagram"></i></a>
+    <a href="#" class="text-white me-3"><i class="bi bi-facebook"></i></a>
+    <a href="#" class="text-white"><i class="bi bi-whatsapp"></i></a>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="scripts/main.js"></script>
+</body>
+
+</html>
